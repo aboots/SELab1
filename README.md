@@ -6,6 +6,7 @@
 این مخزن برای نگهداری کد Back-end مربوط به پروژه‌ی Memo Reminder می‌باشد.
 Memo Reminder یک اپلیکیشن می‌باشد که برای نگهداری خاطرات شما و مرور آن‌ها به کار می‌آید.
 در زیر تصویری از نمای اپلیکیشن‌های آن را مشاهده می‌کنید:
+
 ![application](https://github.com/aboots/SELab1/assets/59336942/1eb038d3-159e-42f0-a2e7-e1ad51b71714)
 
 در ادامه به چگونگی انجام آزمایش و مراحل آن می‌پردازیم.
@@ -18,17 +19,42 @@ Memo Reminder یک اپلیکیشن می‌باشد که برای نگهداری
 ![telegram-cloud-document-4-5900171177820688456](https://github.com/aboots/SELab1/assets/59336942/ea78e82d-f94f-4aa1-9a77-624b9b4a31df)
 
 یک برنچ dev نیز داریم که منظور همان برنچ development (برنچ بر روی staging و برای تست) می‌باشد که تمامی برنچ‌های دیگر از این برنچ گرفته می‌شوند و در نهایت با همین برنچ مرج می‌شوند و تنها از develop به برنچ master حق ایجاد pull request را داریم. این بدین منظور است که کد‌ها همینطوری بدون تست شدن وارد کد اصلی master و محیط production نشوند. برای نمونه در زیر یک نمونه از این برنج‌ ساختن از روی dev را می‌بینید:
+
 ![telegram-cloud-document-4-5902042125704368010](https://github.com/aboots/SELab1/assets/59336942/847e3ac6-beb0-4a28-9b9d-ccc6c0ac7d91)
+
+همانطور که در زیر می‌بینید یک pull request از یثر به مستر ساختیم و بدون review امکان مرج کردن آن وجود ندارد. (مگر با bypass کردن در شرایط ضروری)
+
+![telegram-cloud-document-4-5902422977634373668](https://github.com/aboots/SELab1/assets/59336942/be70eaf5-b3b4-4db5-9ee2-8c8162c286f4)
+
+همچنین در زیر می‌بینید که بعد از review امکان مرج مهیا شده است.
+
+![telegram-cloud-document-4-5904293925518053866](https://github.com/aboots/SELab1/assets/59336942/74f55ad0-d99b-4699-9217-25130951ceec)
+
 
 نام گذاری برنچ‌های دیگر هم طبق همان استاندارد که در خیلی از شرکت‌های امروزه استفاده می‌شود، می‌باشد. بدین صورت که نام‌گذاری همان نام‌های معروف که داریم مثل ```feat,fix,chore,docs,test``` و در ادامه یک اسلش و نام مخصوص آن برنچ می‌آید. در واقع نام اول کتگوری این برنچ را مشخص می‌کند. برای مثال همانطور که در ریپو مشاهده کنید برنچ ```feat/add_models``` به این منظور است که این برنچ یک feature اضافه می‌کند و کار خاص آن هم اضافه کردن modelها به پروژه است. یا مثلا اگر برنچی با fix شروع شود برای حل باگ می‌باشد، یا اگر با docs شروع شود مشخص می‌کند که برای document کردن می‌باشد. 
 در عکس زیر نمونه‌ای از کامیت‌ها را می‌بینید. کامیت‌هایی که کنار آن‌ها verified دارد به این معنا است که با pull request و review صورت گرفته است. 
+
 ![image](https://github.com/aboots/SELab1/assets/59336942/1d54be6b-1b52-4252-9295-d473b33a2650)
 
-در ابتدا قصد داریم تا بعضی اسکرین‌شات‌هایی که در طول انجام پروژه گرفته‌ایم را  قرار دهیم و بعدا توضیحات آن‌ها را تکمیل کنیم.
+در زیر نمونه‌ای از چگونگی مرج کردن یک برنج با dev را می‌بینید.
+
+![telegram-cloud-document-4-5902422977634373670](https://github.com/aboots/SELab1/assets/59336942/c8c8c8d4-4847-4833-83cf-d22ee402e0cc)
+
+در زیر نمونه‌ای از یک برنچ جدید ساختن و پوش بر روی آن را می‌بینید.
+
+![telegram-cloud-document-4-5902042125704368008](https://github.com/aboots/SELab1/assets/59336942/de359e94-d676-46f8-aaac-4c26946a0b93)
+
+همچنین در طول پروژه به ۳ کانفلیکت خوردیم که آن‌ها را به صورت دستی از توی terminal و بدون کمک از IDE حل کردیم. در زیر نمونه‌ای از آن را که در هنگام merge یک برنچ با dev رخ داد را می‌بینید:
+
+![telegram-cloud-document-4-5902042125704368018](https://github.com/aboots/SELab1/assets/59336942/a83590ff-ec69-4d37-91c7-c1953fb0e07c)
+![telegram-cloud-document-4-5902042125704368015](https://github.com/aboots/SELab1/assets/59336942/9dd59ae3-5eba-4c2a-894f-08da583eee87)
+![telegram-cloud-document-4-5902042125704368019](https://github.com/aboots/SELab1/assets/59336942/aedddfb6-234b-4538-9249-9689fc7cfd91)
+
+در زیر نمونه‌ای دیگر از conflict که در یک branch رخ داد و حل آن را می‌بینید.
+
 ![Screenshot 2023-10-29 105310](https://github.com/aboots/SELab1/assets/59165380/c064dace-fd0a-4039-8533-0307c9e597ea)
 ![Screenshot 2023-10-29 105708](https://github.com/aboots/SELab1/assets/59165380/1eb78d77-d0c4-47f6-a27c-396ff2f2f51f)
 
-## پرسش‌ها
 
 ## پرسش‌ها
 
