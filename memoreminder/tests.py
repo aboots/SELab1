@@ -37,7 +37,7 @@ def create_user(username, password, email):
     """
     Create a user with the given `username`, `password` and `email`.
     """
-    return MemoUser.objects.create(username=username, password=password, email=email)
+    return MemoUser.objects.create(username=username, password=password, email=email, pub_date=timezone.now()
 
 class MemoUserIndexViewTests(TestCase):
     def test_no_users(self):
@@ -54,7 +54,7 @@ class MemoUserIndexViewTests(TestCase):
         Questions with a pub_date in the past are displayed on the
         index page.
         """
-        create_user(username="Past user.", password="123456", email="example@gmail.com")
+        create_user(username="Past user.", password="123456", email="example@gmail.com", pub_date=timezone.now() - datetime.timedelta(days=30))
         response = self.client.get(reverse('memo:index'))
         self.assertQuerysetEqual(
             response.context['latest_user_list'],
