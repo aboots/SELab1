@@ -33,3 +33,31 @@ class MemoUserModelTests(TestCase):
         recent_question = MemoUser(pub_date=time)
         self.assertIs(recent_question.was_published_recently(), True)
 
+def create_user(username, password, email):
+    """
+    Create a user with the given `username`, `password` and `email`.
+    """
+    return MemoUser.objects.create(username=username, password=password, email=email)
+
+class MemoUserIndexViewTests(TestCase):
+    def test_no_users(self):
+        """
+        If no users exist, an appropriate message is displayed.
+        """
+        response = self.client.get(reverse('memo:index'))
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "No users are available.")
+        self.assertQuerysetEqual(response.context['latest_user_list'], [])
+
+    def test_past_question(self):
+        """
+        Questions with a pub_date in the past are displayed on the
+        index page.
+        """
+        create_user(username="Past user.", password="123456", email="example@gmail.com")
+        response = self.client.get(reverse('memo:index'))
+        self.assertQuerysetEqual(
+            response.context['latest_user_list'],
+            ['<MemoUser: Past user.>']
+        )
+
